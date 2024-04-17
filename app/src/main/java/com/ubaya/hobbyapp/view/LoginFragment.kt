@@ -50,12 +50,10 @@ class LoginFragment : Fragment() {
             dialog.setPositiveButton("YES", DialogInterface.OnClickListener{dialog, which -> login(username, password)})
             dialog.setNegativeButton("NO", DialogInterface.OnClickListener { dialog, which ->  dialog.dismiss()})
             dialog.create().show()
-
-            binding.btnCreateAcc.setOnClickListener()
-            {
-                val action = LoginFragmentDirections.actionRegistFragment()
-                Navigation.findNavController(it).navigate(action)
-            }
+        }
+        binding.btnCreateAcc.setOnClickListener{
+            val action = LoginFragmentDirections.actionRegistFragment()
+            Navigation.findNavController(it).navigate(action)
         }
     }
     fun login(username: String, password: String){

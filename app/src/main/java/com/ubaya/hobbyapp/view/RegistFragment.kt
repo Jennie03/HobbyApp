@@ -45,7 +45,7 @@ class RegistFragment : Fragment() {
             if (pass == con_pass)
             {
                 dialog.setTitle("Notification")
-                dialog.setMessage("Please make sure that all your data are valid.\n Do you want to register now?")
+                dialog.setMessage("Please make sure that all your data are valid.\nDo you want to register now?")
                 dialog.setPositiveButton("YES", DialogInterface.OnClickListener{dialog, which -> register(it, username,
                                             first_name, last_name, email, pass)})
                 dialog.setNegativeButton("NO", DialogInterface.OnClickListener{dialog, which -> dialog.dismiss()})
@@ -64,10 +64,10 @@ class RegistFragment : Fragment() {
     fun register(view: View, username: String, first_name: String, last_name: String, email: String, password: String)
     {
         Log.d("regist", "registvolley")
-        queue =Volley.newRequestQueue(context)
+        queue = Volley.newRequestQueue(context)
         val url = "http://10.0.2.2/news/register.php"
 
-        val dialog =AlertDialog.Builder(activity)
+        val dialog = AlertDialog.Builder(activity)
         dialog.setTitle("Information")
 
         val stringRequest = object: StringRequest(
