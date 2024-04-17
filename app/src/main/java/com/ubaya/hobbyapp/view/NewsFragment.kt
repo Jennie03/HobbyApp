@@ -36,6 +36,15 @@ class NewsFragment : Fragment() {
         binding.recView.adapter = newsAdapter
 
         observeViewModel()
+
+        binding.refreshLayout.setOnRefreshListener {
+            binding.recView.visibility = View.GONE
+            binding.txtError.visibility = View.GONE
+            binding.progressBar.visibility = View.VISIBLE
+            viewModel.refresh()
+            binding.refreshLayout.isRefreshing = false
+        }
+
     }
 
     fun observeViewModel(){
