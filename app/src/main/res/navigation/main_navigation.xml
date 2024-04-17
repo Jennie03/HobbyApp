@@ -34,6 +34,9 @@
         <action
             android:id="@+id/actionFromNewsDetailFragment"
             app:destination="@id/newsFragment" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/registFragment"

@@ -35,8 +35,6 @@ class NewsFragment : Fragment() {
         binding.recView.layoutManager = LinearLayoutManager(context)
         binding.recView.adapter = newsAdapter
 
-        observeViewModel()
-
         binding.refreshLayout.setOnRefreshListener {
             binding.recView.visibility = View.GONE
             binding.txtError.visibility = View.GONE
@@ -45,6 +43,7 @@ class NewsFragment : Fragment() {
             binding.refreshLayout.isRefreshing = false
         }
 
+        observeViewModel()
     }
 
     fun observeViewModel(){
@@ -60,6 +59,19 @@ class NewsFragment : Fragment() {
             else
             {
                 binding.txtError?.visibility = View.GONE
+            }
+        })
+
+        viewModel.loadingLD.observe(viewLifecycleOwner, Observer {
+            if (it == true)
+            {
+                binding.recView.visibility = View.GONE
+                binding.progressBar.visibility = View.VISIBLE
+            }
+            else
+            {
+                binding.recView.visibility = View.VISIBLE
+                binding.progressBar.visibility = View.GONE
             }
         })
     }

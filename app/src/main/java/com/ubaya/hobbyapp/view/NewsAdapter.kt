@@ -24,13 +24,17 @@ class NewsAdapter(val newsList:ArrayList<News>)
     }
 
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
-        holder.binding.txtTitle.text = newsList[position].title
-        holder.binding.txtWriter.text = newsList[position].writer
-        holder.binding.txtContent.text = newsList[position].content
+        with(holder.binding)
+        {
+            MainActivity.load_pict(holder.itemView, newsList[position].images.toString(), imageView)
+            txtTitle.text = newsList[position].title
+            txtWriter.text = "@${newsList[position].writer}"
+            txtContent.text = newsList[position].content
 
-        holder.binding.btnRead.setOnClickListener{
-            val action = NewsFragmentDirections.actionNewsDetailFragment()
-            Navigation.findNavController(it).navigate(action)
+            btnRead.setOnClickListener{
+                val action = NewsFragmentDirections.actionNewsDetailFragment(newsList[position].id.toString().toInt())
+                Navigation.findNavController(it).navigate(action)
+            }
         }
     }
 
