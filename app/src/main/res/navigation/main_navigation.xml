@@ -11,10 +11,10 @@
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_loginFragment_to_newsFragment"
+            android:id="@+id/actionNewsFragment"
             app:destination="@id/newsFragment" />
         <action
-            android:id="@+id/action_loginFragment_to_registFragment"
+            android:id="@+id/actionRegistFragment"
             app:destination="@id/registFragment" />
     </fragment>
     <fragment
@@ -23,7 +23,7 @@
         android:label="fragment_news"
         tools:layout="@layout/fragment_news" >
         <action
-            android:id="@+id/action_newsFragment_to_newsDetailFragment"
+            android:id="@+id/actionNewsDetailFragment"
             app:destination="@id/newsDetailFragment" />
     </fragment>
     <fragment
@@ -32,7 +32,7 @@
         android:label="fragment_news_detail"
         tools:layout="@layout/fragment_news_detail" >
         <action
-            android:id="@+id/action_newsDetailFragment_to_newsFragment"
+            android:id="@+id/actionFromNewsDetailFragment"
             app:destination="@id/newsFragment" />
     </fragment>
     <fragment
@@ -41,7 +41,7 @@
         android:label="fragment_regist"
         tools:layout="@layout/fragment_regist" >
         <action
-            android:id="@+id/action_registFragment_to_loginFragment"
+            android:id="@+id/actionLoginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
 </navigation>
