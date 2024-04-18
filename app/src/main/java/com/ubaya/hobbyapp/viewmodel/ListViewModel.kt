@@ -17,20 +17,20 @@ class ListViewModel(application: Application): AndroidViewModel(application) {
     val newsLoadErrorLD = MutableLiveData<Boolean>()
     val loadingLD = MutableLiveData<Boolean>()
     val TAG = "volleyTag"
-    private var queue:RequestQueue? = null
+    private var queue: RequestQueue? = null
 
     fun refresh(){
         loadingLD.value = true
-        newsLoadErrorLD.value = false
+        newsLoadErrorLD.value = true
+
+        Log.d("mskvolley", "masuk")
 
         queue = Volley.newRequestQueue(getApplication())
         val url = "http://10.0.2.2/news/news.json"
 
         val stringRequest = StringRequest(Request.Method.GET, url,
             {
-//                loadingLD.value = false
-//                Log.d("showvolley", it)
-                val sType = object : TypeToken<List<News>>(){}.type
+                val sType = object : TypeToken<List<News>>(){ }.type
                 val result = Gson().fromJson<List<News>>(it, sType)
                 newsLD.value = result as ArrayList<News>?
                 loadingLD.value = false
@@ -47,6 +47,9 @@ class ListViewModel(application: Application): AndroidViewModel(application) {
 
         stringRequest.tag = TAG
         queue?.add(stringRequest)
+
+        loadingLD.value = false
+        newsLoadErrorLD.value = false
     }
     override fun onCleared() {
         super.onCleared()

@@ -1,6 +1,7 @@
 package com.ubaya.hobbyapp.view
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,9 +15,10 @@ import com.ubaya.hobbyapp.databinding.FragmentNewsBinding
 import com.ubaya.hobbyapp.viewmodel.ListViewModel
 
 class NewsFragment : Fragment() {
+    private lateinit var binding: FragmentNewsBinding
     private lateinit var viewModel: ListViewModel
     private val newsAdapter = NewsAdapter(arrayListOf())
-    private lateinit var binding: FragmentNewsBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -54,11 +56,11 @@ class NewsFragment : Fragment() {
         viewModel.newsLoadErrorLD.observe(viewLifecycleOwner, Observer {
             if (it == true)
             {
-                binding.txtError?.visibility = View.VISIBLE
+                binding.txtError.visibility = View.VISIBLE
             }
             else
             {
-                binding.txtError?.visibility = View.GONE
+                binding.txtError.visibility = View.GONE
             }
         })
 

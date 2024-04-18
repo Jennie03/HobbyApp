@@ -78,14 +78,16 @@ class LoginFragment : Fragment() {
                         Log.d("cekdta", users.toString())
                         dialog.setMessage("Successfully Logged in.\n Welcome! ${users.username}")
                         dialog.setPositiveButton("OK", DialogInterface.OnClickListener{dialog, which ->
-                            val sharedPrefs =activity?.packageName
-                            val shared: SharedPreferences =  requireActivity().getSharedPreferences(sharedPrefs, Context.MODE_PRIVATE)
+                            val sharedPrefs = activity?.packageName
+                            val shared: SharedPreferences = requireActivity().getSharedPreferences(sharedPrefs, Context.MODE_PRIVATE)
                             val editor = shared.edit()
                             editor.putString("KEY_USER", userData.toString())
                             editor.apply()
+                            Log.d("simpandata", "bisa")
 
                             val action = LoginFragmentDirections.actionNewsFragment()
                             Navigation.findNavController(requireView()).navigate(action)
+                            Log.d("cekhome", "bisa")
                         })
                     }
                 }
@@ -95,10 +97,11 @@ class LoginFragment : Fragment() {
                     dialog.setPositiveButton("OK", DialogInterface.OnClickListener{dialog, which -> dialog.dismiss()})
                 }
                 dialog.create().show()
-                },
+            },
             {
-                Log.e("error", it.toString())
-            })
+                Log.e("errorcheck", it.toString())
+            }
+        )
         {
             override fun getParams(): MutableMap<String, String>? {
                 val params = HashMap<String, String>()

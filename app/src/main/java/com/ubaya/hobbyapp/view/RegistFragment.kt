@@ -61,7 +61,7 @@ class RegistFragment : Fragment() {
         }
     }
 
-    fun register(view: View, username: String, first_name: String, last_name: String, email: String, password: String)
+    fun register(view: View, username: String, first_name: String, last_name: String, email: String, pass: String)
     {
         Log.d("regist", "registvolley")
         queue = Volley.newRequestQueue(context)
@@ -74,7 +74,7 @@ class RegistFragment : Fragment() {
             Request.Method.POST, url,
             {
                 Log.d("cekreg", it)
-                val obj =JSONObject(it)
+                val obj = JSONObject(it)
                 if (obj.getString("result") == "OK")
                 {
                     dialog.setMessage("Registration Successfull.\nYou can now login with your new username and password.")
@@ -102,7 +102,7 @@ class RegistFragment : Fragment() {
                 params["first_name"] = first_name
                 params["last_name"] = last_name
                 params["email"] = email
-                params["password"] = password
+                params["password"] = pass
                 return params
             }
         }
