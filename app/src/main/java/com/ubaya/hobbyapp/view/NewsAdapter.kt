@@ -29,7 +29,7 @@ class NewsAdapter(val newsList:ArrayList<News>)
             MainActivity.load_pict(holder.itemView, newsList[position].images.toString(), imageView)
             txtTitle.text = newsList[position].title
             txtWriter.text = "@${newsList[position].writer}"
-            txtContent.text = newsList[position].content
+            txtSummary.text = newsList[position].summary
 
             btnRead.setOnClickListener{
                 val action = NewsFragmentDirections.actionNewsDetailFragment(newsList[position].id.toString().toInt())
