@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="540dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
-        android:layout_width="369dp"
-        android:layout_height="wrap_content"
+        android:layout_width="367dp"
+        android:layout_height="438dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="15dp"
@@ -20,7 +20,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/txtWriter"
@@ -70,13 +70,13 @@
 
             <TextView
                 android:id="@+id/txtSummary"
-                android:layout_width="329dp"
-                android:layout_height="139dp"
+                android:layout_width="330dp"
+                android:layout_height="122dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="8dp"
                 android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel rutrum felis. Pellentesque posuere sem ac dapibus tempor. In molestie, nulla a auctor sodales, enim mi tempor tortor, in ullamcorper felis libero sed orci. Aenean quis arcu neque. Integer vel nulla pharetra, facilisis leo eget, commodo nulla. Nulla blandit dolor et congue sollicitudin."
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.272"
+                app:layout_constraintHorizontal_bias="0.166"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtWriter" />
         </androidx.constraintlayout.widget.ConstraintLayout>

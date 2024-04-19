@@ -12,19 +12,22 @@
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/actionNewsFragment"
-            app:destination="@id/newsFragment" />
+            app:destination="@id/itemHome" />
         <action
             android:id="@+id/actionRegistFragment"
             app:destination="@id/registFragment" />
     </fragment>
     <fragment
-        android:id="@+id/newsFragment"
+        android:id="@+id/itemHome"
         android:name="com.ubaya.hobbyapp.view.NewsFragment"
         android:label="fragment_news"
         tools:layout="@layout/fragment_news" >
         <action
             android:id="@+id/actionNewsDetailFragment"
             app:destination="@id/newsDetailFragment" />
+        <action
+            android:id="@+id/actionProfileFromNewsFragment"
+            app:destination="@id/itemProfile" />
     </fragment>
     <fragment
         android:id="@+id/newsDetailFragment"
@@ -33,10 +36,13 @@
         tools:layout="@layout/fragment_news_detail" >
         <action
             android:id="@+id/actionFromNewsDetailFragment"
-            app:destination="@id/newsFragment" />
+            app:destination="@id/itemHome" />
         <argument
             android:name="id"
             app:argType="integer" />
+        <action
+            android:id="@+id/actionProfileFromDetailFragment"
+            app:destination="@id/itemProfile" />
     </fragment>
     <fragment
         android:id="@+id/registFragment"
@@ -45,6 +51,15 @@
         tools:layout="@layout/fragment_regist" >
         <action
             android:id="@+id/actionLoginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemProfile"
+        android:name="com.ubaya.hobbyapp.view.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/actionLoginFragmentFromProfile"
             app:destination="@id/loginFragment" />
     </fragment>
 </navigation>

@@ -56,9 +56,6 @@ class MainActivity : AppCompatActivity() {
     fun hideNavBars() {
         navController.addOnDestinationChangedListener {_, destination, _ ->
             when (destination.id) {
-                R.id.newsDetailFragment -> {
-                    binding.bottomNav.visibility = View.GONE
-                }
                 R.id.loginFragment -> {
                     binding.bottomNav.visibility = View.GONE
                 }

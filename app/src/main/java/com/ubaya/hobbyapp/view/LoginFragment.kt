@@ -76,7 +76,7 @@ class LoginFragment : Fragment() {
                         val sType = object: TypeToken<Users>(){}.type
                         val users = Gson().fromJson(userData.toString(), sType) as Users
                         Log.d("cekdta", users.toString())
-                        dialog.setMessage("Successfully Logged in.\n Welcome! ${users.username}")
+                        dialog.setMessage("Successfully Logged in.\n Welcome, ${users.first_name} ${users.last_name}!")
                         dialog.setPositiveButton("OK", DialogInterface.OnClickListener{dialog, which ->
                             val sharedPrefs = activity?.packageName
                             val shared: SharedPreferences = requireActivity().getSharedPreferences(sharedPrefs, Context.MODE_PRIVATE)
